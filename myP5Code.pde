@@ -4,25 +4,60 @@ void setup() {
 }
 
 //🎯Variable Declarations Go Here
-var fireworkX = 20;
+Var outerflame = 25
+var a = 37
+var aspeed = 1
+;
+
+
+
+Var innerFlame = 20;
+var x = 154
+var y = 74 
+var xspeed = .04
+
+
 
 //🟢Draw Procedure - Runs on Repeat
+
+
 draw = function(){
- 
-  background(255,255,255,0);
-  
-   if(mousePressed){
-    showXYPositions();
+
+     noStroke(); 
+      background(255,255,255,0);
+
+
+       if(mousePressed){
+        showXYPositions();
+
+      }
+
+      //🎯Animation Code Goes Here
+      rect();
+
+    // light 
+    fill(255, 233, 188)
+    ellipse(155,68,outerflame,a) 
+     ellipse(250,65,outerflame,a)
+     
+     a = a + aspeed;
+     if ( a > 39) {aspeed = -.5}
+     if (a<35) {aspeed = .5}
+     
+
+     
+
+     // inside of light
+     fill(254,191,65)
+     ellipse(x,y,innerFlame - 8 ,20,innerFlame)
+      ellipse(x + 96,y - 2,12,innerFlame)
     
-  }
+    x = x + xspeed;
+    if (x > 154) {xspeed = -1}
+    if ( x < 151) {xspeed = 1}
   
-  //🎯Animation Code Goes Here
-  rect(fireworkX, 15, 10, 10);
-  
-  fireworkX = fireworkX + 1;
-
 }
-
+ 
 //🟡Extra FUN Features Ms. Hall Added
 //Proceed with Caution (and Curiosity!)
 
